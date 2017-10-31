@@ -8,11 +8,12 @@
 }
 
 body {
-    font-family: monospace;
+    font-family: Courier, monospace;
+    font-size: 90%;
 }
 
 .content {
-    width: 600px;
+    width: 900px;
     margin: 0 auto;
 }
 

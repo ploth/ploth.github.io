@@ -1,0 +1,84 @@
+:root {
+    --meta: #aaa;
+    --title: #a00;
+    --personal: #8085C1;
+    --link: #00a;
+    --hover: black;
+    --visited: #a0a;
+}
+
+body {
+    font-family: monospace;
+}
+
+.content {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.header {
+    font-weight: bold;
+    margin: 20px 0px 30px 0px;
+}
+
+.header .title {
+    display: inline;
+}
+
+.header .title a {
+    font-size: xx-large;
+    text-decoration: none;
+    color: var(--title);
+}
+
+.header .menu {
+    display: inline;
+}
+
+.header .menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--meta);
+}
+
+.header .menu a:hover {
+    color: var(--hover);
+}
+
+.list {
+}
+
+.list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list span {
+    color: var(--meta);
+}
+
+.list a {
+    color: var(--link);
+}
+
+.list a:hover {
+    color: var(--hover);
+}
+
+.list a:visited {
+    color: var(--visited);
+}
+
+.footer {
+    color: var(--hover);
+    font-size: 90%;
+}
+
+.footer a {
+    color: var(--personal);
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}

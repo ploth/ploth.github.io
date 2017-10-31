@@ -1,0 +1,18 @@
+include: [_sass,files]
+highlighter: pygments
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Pascal Loth"
+      category: "blog"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      author: "Pascal Loth"

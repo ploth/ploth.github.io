@@ -26,10 +26,10 @@ Optional zu installieren ist das CLI [khal](https://github.com/pimutils/khal),
 welches uns auch gleich einen Kalender für das Terminal bringt. Khard kann sich
 von Haus aus nicht mit einem CalDAV Server synchronisieren; khal auch nicht mit
 einem CardDAV. Beide Programme bieten nur Schnittstellen um mit entsprechenden
-Datenbanken zu interagieren. Die Synchronisation mit Cal/CardDAV übernimmt
-[vdirsyncer](https://github.com/pimutils/vdirsyncer). Mit Mutt lassen sich
-durchaus eure E-Mails durchsuchen, doch besser, effizienter und schneller geht
-dies mit [notmuch](https://notmuchmail.org/).
+Datenbanken zu interagieren. Die Synchronisation mit einem Cal/CardDAV Server
+übernimmt [vdirsyncer](https://github.com/pimutils/vdirsyncer). Mit Mutt lassen
+sich durchaus die E-Mails durchsuchen, doch besser, effizienter und schneller
+geht dies mit [notmuch](https://notmuchmail.org/).
 
 ### Installation
 
@@ -49,6 +49,7 @@ source ./office/bin/activate
 pip install offlineimap vdirsyncer khard khal
 deactivate
 
+ln -s ~/.venvs/office/bin/offlineimap ~/bin/offlineimap
 ln -s ~/.venvs/office/bin/vdirsyncer ~/bin/vdirsyncer
 ln -s ~/.venvs/office/bin/khard ~/bin/khard
 ln -s ~/.venvs/office/bin/khal ~/bin/khal
@@ -124,7 +125,7 @@ folgenden Inhalt an:
 
 {% highlight Shell linenos %}
 {% raw %}
-set spoolfile       = "/home/<USER>/offlineimap/Mailbox/INBOX"
+set spoolfile       = "/home/<USER>/offlineimap/<YOURACCOUNTNAME>/INBOX"
 set folder          = "/home/<USER>/offlineimap"
 
 source /home/<USER>/.mutt/mailboxes
@@ -152,7 +153,7 @@ set header_cache     = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 
 # Fetch new mails via offlineimap
-macro index,pager z "! /usr/bin/offlineimap -o<enter>" "Refresh offlineimap"
+macro index,pager z "! /home/<USER>/bin/offlineimap -o<enter>" "Refresh offlineimap"
 
 # Khard commands
 #complete email addresses by pressing the Tab-key in mutt's new mail dialog
@@ -288,11 +289,11 @@ color header default default "^X-SpamProbe: SPAM"
 {% endhighlight %}
 
 Dies konfiguriert euch ein recht schlicht aussehendes Mutt. Es treten nur
-markierte, neue und ungelesene Nachrichten farbig auf. In der linken Sidebar
-wird mit den Pfeiltasten navigiert. Die rechte Pfeiltaste läd den ausgewählten
-Ordner.  In den Mails kann mit den standard vim Kommandos navigiert werden. Nun
-sind noch mailaccountspezifische Einstellungen zu tätigen. Erstellt die Datei
-`~/.mutt/accounts/<YOURACCOUNTNAME>`
+markierte, neue und ungelesene Nachrichten farbig auf. In der linken Leiste
+*(Sidebar)* wird mit den Pfeiltasten navigiert. Die rechte Pfeiltaste läd den
+ausgewählten Ordner.  In den Mails kann mit den standard vim Kommandos navigiert
+werden. Nun sind noch mailaccountspezifische Einstellungen zu tätigen. Erstellt
+die Datei `~/.mutt/accounts/<YOURACCOUNTNAME>`
 
 {% highlight Shell linenos %}
 set sendmail        = "/usr/bin/msmtp -a <YOURACCOUNTNAME>"
@@ -532,6 +533,16 @@ gpg_path=gpg
 {% endhighlight %}
 
 Nun führt noch ein `notmuch setup` aus.  
-Herzlichen Glückwunsch! Welcome the to light side of the Force.
+Herzlichen Glückwunsch! Welcome the to light side of the Force.  
+Ihr habt da nun ein ziemlich mächtiges Set an Programmen die super miteinander
+harmonieren. Das Ausführen von `khard` bringt euer komplettes Adressbuch hervor,
+welches ihr über entsprechende Kommandos manipulieren könnt. `khal` zeigt euch
+eine kurze Zusammenfassung der nächsten Termine. `ikhal` ist ein interaktiver
+Kalender, in dem ihr direkt eure Termine verwalten könnt. Es sei vielleicht noch
+erwähnt, sofern ihr es nicht in der `~/.muttrc` gelesen habt, dass ihr innerhalb
+von Mutt mit `L` euere Emails durchsucht. Einigen wird auch aufgefallen sein,
+dass die E-Mails nicht automatisch abgerufen werden. Hier kann je nach belieben
+ein OfflineIMAP Service oder ein cronjob für `offlineimap -o` eingerichtet
+werden.
 
 Anmerkungen, Fehler, Beschwerden gerne an blog@ploth.xyz

@@ -10,10 +10,11 @@
 body {
     font-family: Courier, monospace;
     font-size: 90%;
+    max-width: 2000px;
 }
 
 .content {
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto;
 }
 

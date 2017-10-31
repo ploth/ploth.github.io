@@ -2,7 +2,7 @@
 leayout: default
 ---
 
-### Legal notice
+## Legal notice
 **Angaben gemäß $ 5 TMG**  
 blog.ploth.xyz  
 Pascal Loth  

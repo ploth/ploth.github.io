@@ -448,7 +448,7 @@ password = "<PASSWORD>"
 
 {% endhighlight %}
 
-### Khard
+### khard
 
 Khard ist nicht wild zu konfigurieren. Erstellt eine
 `~/.config/khard/khard.conf`
@@ -465,7 +465,7 @@ default_action = list
 show_nicknames = no
 {% endhighlight %}
 
-### Khal
+### khal
 
 Auch khal ist einfach. Erstellt eine `~/.config/khal/config`
 

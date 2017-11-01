@@ -46,7 +46,7 @@ mkdir ~/.venvs
 cd ~/.venvs
 python3 -m venv office
 source ./office/bin/activate
-pip install offlineimap vdirsyncer khard khal
+pip install six offlineimap vdirsyncer khard khal
 deactivate
 
 ln -s ~/.venvs/office/bin/offlineimap ~/bin/offlineimap

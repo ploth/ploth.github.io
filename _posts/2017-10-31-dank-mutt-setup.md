@@ -91,7 +91,7 @@ postsynchook = /usr/bin/notmuch new
 # Currently, offlineimap only supports maildir and IMAP for local repositories.
 type = Maildir
 # Where should the mail be placed?
-localfolders = ~/offlineimap/Mailbox
+localfolders = ~/offlineimap/<YOURACCOUNTNAME>
 
 [Repository Remote<YOURACCOUNTNAME>]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
@@ -346,7 +346,7 @@ tls            on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile        ~/.msmtp.log
 
-# Mailbox
+# <YOURACCOUNTNAME>
 account        <YOURACCOUNTNAME>
 host           <SMTPSERVER>
 port           <PORT>

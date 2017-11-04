@@ -11,11 +11,11 @@
 body {
     font-family: Courier, monospace;
     font-size: 90%;
+    width: 600px;
+    margin-left: calc(50vw - 300px);
 }
 
 .content {
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .header {
@@ -53,6 +53,7 @@ body {
 .list ul {
     list-style-type: none;
     padding: 0;
+    line-height: 1.5em;
 }
 
 .list span {
@@ -69,6 +70,11 @@ body {
 
 .list a:visited {
     color: var(--visited);
+}
+
+.post {
+    text-align: justify;
+    line-height: 1.5em;
 }
 
 .footer {

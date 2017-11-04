@@ -60,5 +60,9 @@
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 .highlight {
     overflow: auto;
-    width: 500px;
+    width: 560px;
+    margin: 0px 20px 0px 20px;
+}
+.highlight pre {
+    margin: 0.5em 0.5em;
 }

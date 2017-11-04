@@ -5,16 +5,16 @@
     --link: #00a;
     --hover: black;
     --visited: #a0a;
+    --highlight: #f9f9f9
 }
 
 body {
     font-family: Courier, monospace;
     font-size: 90%;
-    max-width: 2000px;
 }
 
 .content {
-    max-width: 900px;
+    max-width: 600px;
     margin: 0 auto;
 }
 

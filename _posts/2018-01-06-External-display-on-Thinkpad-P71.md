@@ -27,16 +27,16 @@ system.
 
 I've set up two xorg configurations. You may have to adapt them to your system.
 
+#### /etc/X11/xorg.conf.intel
 {% highlight Shell linenos %}
-#/etc/X11/xorg.conf.intel
 Section "Device"
 	Identifier "Intel Graphics"
 	Driver "intel"
 EndSection
 {% endhighlight %}
 
+#### /etc/X11/xorg.conf.nvidia
 {% highlight Shell linenos %}
-#/etc/X11/xorg.conf.nvidia
 Section "Device"
 	Identifier "NVIDIA Graphics"
 	Driver "nvidia"
@@ -53,6 +53,7 @@ EndSection
 
 Before I start X, all I have to do is to write `nvidia on` respectively `nvidia off`. 
 
+#### ~/bin/nvidia
 {% highlight Shell linenos %}
 #!/bin/bash
 

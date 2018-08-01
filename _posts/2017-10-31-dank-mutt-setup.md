@@ -1,5 +1,5 @@
 ---
-title: My dank mutt setup
+title: My Dank Mutt Setup
 tags: mutt offlineimap msmtp khal khard vdirsyncer notmuch 
 ---
 

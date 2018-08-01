@@ -1,5 +1,5 @@
 ---
-title: Vim search like a boss
+title: Vim Search Like a Boss
 tags: vim search ctrpl find ag silver searcher fzf
 ---
 

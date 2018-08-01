@@ -1,5 +1,5 @@
 ---
-title: External display on Thinkpad P71
+title: External Display on Thinkpad P71
 tags: nvidia nouveau external graphics bumblebee bbswitch thinkpad
 ---
 

@@ -7,29 +7,18 @@ title: "blog.ploth.xyz"
   <nav>
     <ul>
         {% for post in site.posts %}
-        <li>
-            <span class="date">{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
+        <li><span class="date">{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
-    </ul>
-  </nav>
-  <h2>Links</h2>
-  <nav>
-    <ul>
-        <li>
-            <span class="date">31 Oct 2017</span> &raquo; <a href="https://www.rohow.de/">RoHOW - Robotic Hamburg Open Workshop</a>
-        </li>
-        <li>
-            <span class="date">30 Oct 2017</span> &raquo; <a href="https://www.hulks.de/">HULKs - RoboCup SPL Team</a>
-        </li>
     </ul>
   </nav>
   <h2>Noteworthy projects</h2>
   <nav>
     <ul>
-        <li>
-            <span class="date">31 Oct 2017</span> &raquo; <a href="https://github.com/nagua/harbour-taskwarrior-GUI">Simple GUI client for Taskwarrior</a>
-        </li>
+      <li><a href="https://prism-break.org/">PRISM ⚡ Break - Opt out of global data surveillance programs like PRISM, XKeyscore and Tempora.</a></li>
+      <li><a href="https://matrix.org/blog/home/">[MATRIX] An open network for secure, decentralized communication.</a></li>
+      <li><a href="https://github.com/nagua/harbour-taskwarrior-GUI">Simple GUI client for Taskwarrior</a></li>
+      <li><a href="https://www.rohow.de/">RoHOW - Robotic Hamburg Open Workshop</a></li>
+      <li><a href="https://www.hulks.de/">HULKs - RoboCup SPL Team</a></li>
     </ul>
   </nav>
 </div>

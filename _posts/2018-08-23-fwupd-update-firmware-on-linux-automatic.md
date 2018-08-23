@@ -13,8 +13,8 @@ it to work in Gentoo, you can follow these steps.
 
 [Supported devices](https://fwupd.org/lvfs/devicelist)
 
-First of all have a short look at the (basic usage
-flow)[https://github.com/hughsie/fwupd#basic-usage-flow-command-line]. After
+First of all have a short look at the [basic usage
+flow](https://github.com/hughsie/fwupd#basic-usage-flow-command-line). After
 emerging `sys-apps/fwupd` (pay attention to the gpg and uefi USE flag) and
 starting it's service with `rc-service fwupd start` its most likely that
 `fwupdmgr get-devices` returns "No detected devices." 

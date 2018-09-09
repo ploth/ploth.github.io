@@ -8,8 +8,8 @@ tags: fwupd vendor firmware service secure portal updates gentoo
 Recently Lenovo has started using Linux Update Firmware Service - short
 [LVFS](https://fwupd.org/). This is very good news! This allows you to update
 your BIOS without an existing Windows installation. Of course there are other
-ways but this is often quite a hassle. Due to lack of documentation on how to get
-it to work in Gentoo, you can follow these steps.
+ways but those are often quite a hassle. Due to lack of other documentation on
+how to get it to work on Gentoo follow the following steps.
 
 [Supported devices](https://fwupd.org/lvfs/devicelist)
 

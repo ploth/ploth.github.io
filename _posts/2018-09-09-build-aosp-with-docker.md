@@ -20,7 +20,7 @@ that und just wanted to build them. So I made my own docker container.
 [Here](https://gitlab.com/ploth/Dockerfiles/tree/master/aosp) can you find my
 Dockerfile:
 
-```Docker
+{% highlight Shell linenos %}
 FROM ubuntu:16.04
 
 # reconfigure to use bash
@@ -64,18 +64,18 @@ RUN apt-get update && \
 RUN java -version
 # fix ninja USER: unbound variable
 ENV USER=root
-```
+{% endhighlight %}
 
 Simply follow these steps:
 
-```bash
+{% highlight Shell linenos %}
 docker build -t android - < /path/to/Dockerfile
 docker run -it --mount type=bind,source=/path/to/android,target=/mnt android bash
 # (inside container)
 cd /mnt
 source build/envsetup.sh && lunch
 make –j <insert the cpu thread number of your computer>
-```
+{% endhighlight %}
 
 This image is capable of compiling some android source branches. Tested with
 `aosp_h3213-eng`, `aosp_h3213-userdebug`, `aosp_f5321-eng` and `aosp_f5321-userdebug`

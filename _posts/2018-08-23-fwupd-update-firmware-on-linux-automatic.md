@@ -56,7 +56,7 @@ Pay attention to errors!
 Check which binary the service executes `cat /etc/init.d/fwupd`. Something like
 this will show up:
 
-```
+{% highlight Shell linenos %}
 #!/sbin/openrc-run
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
@@ -70,7 +70,7 @@ depend() {
   need dbus
   before xdm
 }
-```
+{% endhighlight %}
 
 Stop the service `rc-service fwupd stop` and start the daemon on the console
 `/usr/libexec/fwupd/fwupd` (path from the above file).

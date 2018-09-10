@@ -68,7 +68,7 @@ ENV USER=root
 
 Simply follow these steps:
 
-{% highlight Shell linenos %}
+{% highlight Shell %}
 docker build -t android - < /path/to/Dockerfile
 docker run -it --mount type=bind,source=/path/to/android,target=/mnt android bash
 # (inside container)

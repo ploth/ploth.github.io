@@ -3,7 +3,6 @@ title: Set Up Bluetooth Headset on Gentoo Including Headset Control Interface
 tags: bluetooth bluez headset microphone speaker touch interface d-feet dbus sony wh-1000xm3
 ---
 
-
 ## Set Up Bluetooth Headset on Gentoo Including Headset Control Interface
 
 The following setup allows you to easily connect your Bluetooth headset to

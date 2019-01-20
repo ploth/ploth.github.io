@@ -17,7 +17,7 @@ working.
 
 ### udev
 
-{% highlight %}
+{% highlight Text %}
 General setup  --->
     [*] Configure standard kernel features (expert users)  --->
         [ ] Enable deprecated sysfs features to support old userspace tools
@@ -50,7 +50,7 @@ rc-update add udev sysinit
 
 ### Bluetooth
 
-{% highlight %}
+{% highlight Text %}
 [*] Networking support --->
       <M>   Bluetooth subsystem support --->
               [*]   Bluetooth Classic (BR/EDR) features
@@ -84,7 +84,7 @@ rc-update add bluetooth default
 
 ### Bluetooth Input Devices
 
-{% highlight %}
+{% highlight Text %}
 Device Drivers  --->
     [*] HID Devices  --->
 
@@ -112,7 +112,7 @@ headset is able to send. `xev` helps you with this task.
 With `playerctl` installed you can register the following key objects inside
 your `rc.lua`.
 
-{% highlight linenos %}
+{% highlight Lua linenos %}
 awful.key({                   }, "XF86AudioPrev",
   function ()
 	awful.util.spawn("playerctl previous")

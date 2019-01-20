@@ -1,6 +1,6 @@
 ---
 title: Set Up Bluetooth Headset on Gentoo Including Headset Control Interface
-tags: bluetooth bluez headset microphone speaker touch interface d-feet dbus sony wh-1000xm3
+tags: bluetooth bluez headset microphone speaker touch interface d-feet dbus sony wh-1000xm3 button interface kernel
 ---
 
 ## Set Up Bluetooth Headset on Gentoo Including Headset Control Interface
@@ -147,4 +147,4 @@ awful.key({                   }, "XF86AudioNext",
 
 ## Acknowledgement
 
-Thanks to [@nagua](https://github.com/nagua/) for the help with the input devices.
+Thanks to [@nagua](https://github.com/nagua/) for pointing me into the direction of `udev`.

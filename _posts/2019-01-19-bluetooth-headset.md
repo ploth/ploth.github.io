@@ -17,6 +17,8 @@ working.
 
 ### udev
 
+#### Kernel Configuration
+
 {% highlight Text %}
 General setup  --->
     [*] Configure standard kernel features (expert users)  --->
@@ -43,12 +45,16 @@ File systems  --->
         [*] sysfs file system support
 {% endhighlight %}
 
+#### Setup
+
 {% highlight Shell %}
 emerge --ask --oneshot sys-fs/eudev
 rc-update add udev sysinit
 {% endhighlight %}
 
 ### Bluetooth
+
+#### Kernel Configuration
 
 {% highlight Text %}
 [*] Networking support --->
@@ -71,6 +77,8 @@ rc-update add udev sysinit
             <*>   User-space I/O driver support for HID subsystem
 {% endhighlight %}
 
+#### Setup
+
 {% highlight Shell %}
 emerge -av --noreplace net-wireless/bluez
 gpasswd -a <user> plugdev
@@ -83,6 +91,8 @@ rc-update add bluetooth default
 [Arch Wiki](https://wiki.archlinux.org/index.php/bluetooth#Pairing)
 
 ### Bluetooth Input Devices
+
+#### Kernel Configuration
 
 {% highlight Text %}
 Device Drivers  --->
@@ -97,6 +107,8 @@ Device Drivers  --->
           <*>   L2CAP protocol support
           <*>   HIDP protocol support<Paste>
 {% endhighlight %}
+
+#### Setup
 
 Enable HID protocol handling in userspace input profile by adding
 `UserspaceHID=true` to `/etc/bluetooth/input.conf`.
@@ -145,6 +157,6 @@ awful.key({                   }, "XF86AudioNext",
 
 `pavucontrol` helps visualizing the current audio output configuration.
 
-## Acknowledgement
+### Acknowledgement
 
 Thanks to [@nagua](https://github.com/nagua/) for pointing me into the direction of `udev`.

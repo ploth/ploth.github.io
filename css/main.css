@@ -79,7 +79,7 @@ a:visited {
 }
 
 .footer {
-    color: var(--cdarkred);
+    color: var(--cgrey);
     font-size: 90%;
 }
 

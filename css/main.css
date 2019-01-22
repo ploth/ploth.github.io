@@ -16,7 +16,7 @@ body {
 }
 
 a {
-    color: var(--cdarkblue);
+    color: var(--cblue);
 }
 
 a:hover {
@@ -24,7 +24,7 @@ a:hover {
 }
 
 a:visited {
-    color: var(--cdarkblue);
+    color: var(--cblue);
 }
 
 .content {

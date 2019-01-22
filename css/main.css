@@ -84,7 +84,11 @@ a:visited {
 }
 
 .footer a {
-    color: var(--cdarkblue);
+    color: var(--cgrey);
+}
+
+.footer a:hover {
+    color: var(--cblack);
 }
 
 .footer ul {

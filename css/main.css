@@ -1,8 +1,11 @@
 :root {
-    --cblack: #000;
-    --cgrey: #aaa;
-    --cred: #a00;
-    --cpurple: #88C;
+    --cblack: #000000;
+    --cgrey: #aaaaaa;
+    --cred: #aa0000;
+    --cdarkred: #550000;
+    --cblue: #0C9CF6;
+    --cdarkblue: #0C4E77;
+    --cyellow: #B7B400;
 }
 
 body {
@@ -10,6 +13,18 @@ body {
     font-size: 90%;
     width: 600px;
     margin-left: calc(50vw - 300px);
+}
+
+a {
+    color: var(--cdarkblue);
+}
+
+a:hover {
+    color: var(--cblack);
+}
+
+a:visited {
+    color: var(--cdarkblue);
 }
 
 .content {
@@ -57,17 +72,6 @@ body {
     color: var(--cgrey);
 }
 
-.list a {
-    color: var(--cpurple);
-}
-
-.list a:hover {
-    color: var(--cpurple);
-}
-
-.list a:visited {
-    color: var(--cpurple);
-}
 
 .post {
     text-align: justify;
@@ -75,12 +79,12 @@ body {
 }
 
 .footer {
-    color: var(--cgrey);
+    color: var(--cdarkred);
     font-size: 90%;
 }
 
 .footer a {
-    color: var(--cpurple);
+    color: var(--cdarkblue);
 }
 
 .footer ul {

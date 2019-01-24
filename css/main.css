@@ -1,5 +1,6 @@
 :root {
     --cblack: #000000;
+    --clightgrey: #e8e8e8;
     --cgrey: #aaaaaa;
     --cred: #aa0000;
     --cdarkred: #550000;
@@ -10,6 +11,7 @@
 }
 
 body {
+    background-color: var(--clightgrey);
     font-family: Courier, monospace;
     font-size: 90%;
     width: 600px;

@@ -123,7 +123,7 @@ get moved to another output device at first. In that case just call `s` again
 without any parameters. The script is also on
 [Gitlab](https://gitlab.com/snippets/1787736)
 
-{% highlight Shell %}
+{% highlight Shell linenos%}
 #!/bin/bash
 
 IS_DEVICE=<speaker_sink>

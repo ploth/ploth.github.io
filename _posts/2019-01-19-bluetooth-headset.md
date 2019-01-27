@@ -113,6 +113,98 @@ Device Drivers  --->
 Enable HID protocol handling in userspace input profile by adding
 `UserspaceHID=true` to `/etc/bluetooth/input.conf`.
 
+### Speaker Control Script
+
+Assuming you've done the pairing process already the following script connects
+computer and bluetooth headset by calling `s hs` (hs stands for headset). With
+`s is` you can switch to your internal speakers. `s switch` toggles between
+internal speakers and headset. Sometimes there a clients which doesn't like to
+get moved to another output device at first. In that case just call `s` again
+without any parameters. The script is also on
+[Gitlab](https://gitlab.com/snippets/1787736)
+
+{% highlight Shell %}
+#!/bin/bash
+
+IS_DEVICE=<speaker_sink>
+BT_DEVICE=<bluetooth_sink>
+BT_DEVICE_MAC=<headset_mac_address>
+
+# turn bluetooth on and connect to bluetooth device
+hs() {
+  echo "power on" | bluetoothctl
+  sleep 1 #Sometimes not yet ready
+  echo "connect $BT_DEVICE_MAC" | bluetoothctl
+}
+
+# turn bluetooth off
+is() {
+  pacmd set-default-sink $IS_DEVICE
+  pacmd set-default-source $IS_DEVICE.monitor
+  echo "power off" | bluetoothctl
+}
+
+# switch current clients between internal speaker and bluetooth device
+switch() {
+  if [[ $(cat ~/.hs_status) == 'off' ]]; then
+    echo "on" > ~/.hs_status
+    move_to_bluetooth
+  else
+    echo "off" > ~/.hs_status
+    move_to_internal_speaker
+  fi
+}
+
+# set default device and move current clients to bluetooth device
+move_to_bluetooth() {
+  echo "Moved to bluetooth."
+  pacmd set-default-sink $BT_DEVICE
+  pacmd set-default-source $BT_DEVICE.monitor
+  for playing in $(pacmd list-sink-inputs | awk '$1 == "index:" {print $2}')
+  do
+    pacmd move-sink-input $playing $BT_DEVICE
+  done
+  for recording in $(pacmd list-source-outputs | awk '$1 == "index:" {print $2}')
+  do
+    pacmd move-source-output $recording $BT_DEVICE.monitor
+  done
+}
+
+# set default device and move current clients to interal speaker
+move_to_internal_speaker() {
+  echo "Moved to internal speakers."
+  pacmd set-default-sink $IS_DEVICE
+  pacmd set-default-source $IS_DEVICE.monitor
+  for playing in $(pacmd list-sink-inputs | awk '$1 == "index:" {print $2}')
+  do
+    pacmd move-sink-input $playing $IS_DEVICE
+  done
+  for recording in $(pacmd list-source-outputs | awk '$1 == "index:" {print $2}')
+  do
+    pacmd move-source-output $recording $IS_DEVICE.monitor
+  done
+}
+
+if [[ $1 ]]; then
+  case "$1" in
+    hs) hs ;;
+    is) is ;;
+    switch) switch ;;
+    move) switch ;;
+  esac
+# without any argument
+else
+  # read current state
+  if [[ $(cat ~/.hs_status) == 'on' ]]; then
+    # apply current state for filthy clients again
+    move_to_bluetooth
+  else
+    # apply current state for filthy clients again
+    move_to_internal_speaker
+  fi
+fi
+{% endhighlight %}
+
 ### Button Interface
 
 You should now be able to receive `XF86AudioPrev`, `XF86AudioNext`,
